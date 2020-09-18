@@ -1,7 +1,7 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 
 import PageHeader from '../../components/PageHeader';
-import Table from '../../components/Table';
+import TableUrls from '../../components/TableUrls';
 
 import './styles.css'
 
@@ -14,7 +14,7 @@ function Urls() {
             <PageHeader title="Estes são as Urls suspeitas que coletamos nos últimos 10 dias">
             </PageHeader>
 
-            <Table/>
+            <TableUrls/>
         </div>
     )
 }

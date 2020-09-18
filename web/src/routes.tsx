@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './pages/Landing'; 
 import Leakages from './pages/Leakages';
 import Urls from './pages/Urls';
+import SearchLeakages from './pages/SearchLeakages';
 
 function Routes(){
     return (
@@ -12,6 +13,7 @@ function Routes(){
             <Route path="/leakages" component={Leakages} />
             {/* <Route path="/users" component={Users} /> */}
             <Route path="/urls" component={Urls} />
+            <Route path="/searchleakages" component={SearchLeakages} />
         </BrowserRouter>
     );
 }
