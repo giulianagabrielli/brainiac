@@ -10,8 +10,111 @@
     background: var(--color-primary);
 }
 
+#login-form {
+    width: 100vw;
+    height: 100vh;
+}
+
+#login-form .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
+
+#login-form main {
+    background: var(--color-box-base);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    overflow: hidden;
+}
+
+#login-form main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#login-form main fieldset+fieldset {
+    margin-top: 6.4rem;
+}
+
+#login-form main fieldset legend {
+    font: 700 2.4rem Ubuntu;
+    color: var(--color-text-title);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#login-form main fieldset legend button {
+    background: none;
+    border: 0;
+    color: var(--color-primary);
+    font: 700 1.6rem Ubuntu;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#login-form main fieldset legend button:hover {
+    color: var(--color-primary-dark);
+}
+
+#login-form main fieldset .input-block+.textarea-block,
+#login-form main fieldset .select-block+.input-block {
+    margin-top: 2.4rem;
+}
+
+#login-form main label {
+    color: var(--color-text-complement);
+}
+
+#login-form main footer {
+    padding: 4rem 2.4rem;
+    background: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-white);
+    margin-top: 6.4rem;
+}
+
+#login-form main footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+}
+
+#login-form main footer p img {
+    margin-right: 2rem;
+}
+
+#login-form main footer button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Ubuntu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-top: 3.2rem;
+}
+
+#login-form main footer button:hover {
+    background: var(--color-secundary-dark);
+}
+
 .logo-container img {
-    height: 12rem;
+    height: 10rem;
 }
 
 .hero-image {
@@ -59,25 +162,16 @@
 }
 
 .buttons-container a img {
-    width: 3rem;
-    margin-left: 20px;
-    color: white;
+    width: 4rem;
 }
 
-.buttons-container a.leakages {
+.buttons-container a.login {
     background: var(--color-primary-lighter);
 }
 
-.buttons-container a.urls {
-    background: var(--color-secundary);
-}
 
-.buttons-container a.leakages:hover {
+.buttons-container a.login:hover {
     background: var(--color-primary-light);
-}
-
-.buttons-container a.urls:hover {
-    background: var(--color-secundary-dark);
 }
 
 .buttons-container a img {

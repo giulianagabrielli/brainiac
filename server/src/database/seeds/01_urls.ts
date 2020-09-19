@@ -1,20 +1,17 @@
 import * as Knex from "knex";
+const faker = require("faker");
 
-export async function seed(knex: Knex): Promise<void> {
-  // Deletes ALL existing entries
-  await knex("urls").del();
+const createFakeUrls = () => ({
+  url: faker.internet.url(),
+  created_at: faker.date.recent(),
+});
 
-  // Inserts seed entries
-  await knex("urls").insert([
-    { id: 1, url: "http://www.dominiofalso1.com" },
-    { id: 2, url: "http://www.dominiofalso2.com" },
-    { id: 3, url: "http://www.dominiofalso3.com" },
-    { id: 4, url: "http://www.dominiofalso4.com" },
-    { id: 5, url: "http://www.dominiofalso5.com" },
-    { id: 6, url: "http://www.dominiofalso6.com" },
-    { id: 7, url: "http://www.dominiofalso7.com" },
-    { id: 8, url: "http://www.dominiofalso8.com" },
-    { id: 9, url: "http://www.dominiofalso9.com" },
-    { id: 10, url: "http://www.dominiofalso10.com" },
-  ]);
-}
+exports.seed = async function (knex: Knex, Promise: Promise<void>) {
+  const fakeUrls = [];
+  const desireFakeUrls = 1000;
+  for (let i = 0; i < desireFakeUrls; i++) {
+    fakeUrls.push(createFakeUrls());
+  }
+
+  await knex("urls").insert(fakeUrls);
+};

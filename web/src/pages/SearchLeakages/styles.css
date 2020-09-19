@@ -22,7 +22,7 @@
     padding: 0 2.4rem;
 }
 
-#page-teacher-form main fieldset + fieldset {
+#page-teacher-form main fieldset+fieldset {
     margin-top: 6.4rem;
 }
 
@@ -45,14 +45,16 @@
     font: 700 1.6rem Ubuntu;
     cursor: pointer;
     transition: color 0.2s;
+    display: flex;
+    justify-content: right;
 }
 
 #page-teacher-form main fieldset legend button:hover {
     color: var(--color-primary-dark);
 }
 
-#page-teacher-form main fieldset .input-block + .textarea-block,
-#page-teacher-form main fieldset .select-block + .input-block {
+#page-teacher-form main fieldset .input-block+.textarea-block,
+#page-teacher-form main fieldset .select-block+.input-block {
     margin-top: 2.4rem;
 }
 

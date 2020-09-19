@@ -3,15 +3,25 @@ import { Link } from "react-router-dom";
 
 import logoBrainiac from "../../assets/images/logobrainiac.png";
 import landingImg from "../../assets/images/landing4.svg";
-import leakagesIcon from "../../assets/images/icons/dadosvazados.svg";
-import urlsIcon from "../../assets/images/icons/urls.svg";
+import studyIcon from "../../assets/images/icons/study.svg";
+import giveClassesIcon from "../../assets/images/icons/give-classes.svg";
 import purpleHeartIcon from "../../assets/images/icons/purple-heart.svg";
 
 import api from "../../services/api";
 
 import "./styles.css";
 
-function Landing() {
+function Home() {
+  const [totalLeakages, setTotalLeakages] = useState(0);
+
+  useEffect(() => {
+    api.get("leakages").then((response) => {
+      const { id } = response.data;
+
+      setTotalLeakages(id);
+    });
+  }, [totalLeakages]);
+
   return (
     <div id="page-landing">
       <div id="page-landing-content" className="container">
@@ -24,23 +34,14 @@ function Landing() {
         <img src={landingImg} alt="" className="hero-image" />
 
         <div className="buttons-container">
-          <Link to="/searchleakages" className="leakages">
-            <img src={leakagesIcon} alt="" />
-            Personal Data Breaches
-          </Link>
-          <Link to="/urls" className="urls">
-            <img src={urlsIcon} alt="" />
-            Suspicious Domains
+          <Link to="/login" className="leakages">
+            {/* <img src={studyIcon} alt="" /> */}
+            Login
           </Link>
         </div>
-
-        {/* <span className="total-leakages">
-          Total de {totalLeakages} vazamentos já registados{" "}
-          <img src={purpleHeartIcon} alt="Coração Roxo" />
-        </span> */}
       </div>
     </div>
   );
 }
 
-export default Landing;
+export default Home;
